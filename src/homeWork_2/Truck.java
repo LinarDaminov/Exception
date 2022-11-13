@@ -24,6 +24,14 @@ public class Truck extends Transport implements Competing {
     }
 
     @Override
+    public boolean service() {
+        if (Math.random() > 0.7) {
+
+        }
+        return false;
+    }
+
+    @Override
     public void startMove() {
 
     }
@@ -59,9 +67,7 @@ public class Truck extends Transport implements Competing {
             System.out.println("Недостаточно информации");
         }
     }
-    public void makeDiagnostic() {
-        System.out.println();
-    }
+
 
 
 }

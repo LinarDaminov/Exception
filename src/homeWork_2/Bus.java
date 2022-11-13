@@ -1,6 +1,6 @@
 package homeWork_2;
 
-public class Bus extends Transport implements Competing {
+public  class Bus extends Transport implements Competing {
     private final Capacity capacity;
     public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
@@ -68,9 +68,11 @@ public class Bus extends Transport implements Competing {
         return 150;
     }
 
-    public void makeDiagnostic() {
-        System.out.println("Автобус марки" + getBrand() + getBrand() + "в диагностике не нуждается");
+    public boolean service(){
+        System.out.println("Автобус" + getBrand() + getModel() + "в диагностике не нуждается");
+        return true;
     }
+
 
 
 }

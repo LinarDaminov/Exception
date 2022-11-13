@@ -16,6 +16,14 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
+    public boolean service() {
+        if (Math.random() > 0.8) {
+
+        }
+        return false;
+    }
+
+    @Override
     public void startMove() {
     }
     @Override
@@ -36,9 +44,7 @@ public class Car extends Transport implements Competing {
         return 220;
     }
 
-    public void makeDiagnostic() {
 
-    }
 
 
     public void checkType() {

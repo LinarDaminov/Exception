@@ -41,10 +41,12 @@ public abstract class Transport {
     public String toString() {
         return "Автомобиль марки: " + brand + ",Mодель: " + model + ",Объем двигателя: " + engineVolume +" "+ getClass();
     }
-    public void makeDiagnostic() {
-    }
+
+    public abstract boolean service();
 
 
     public abstract void startMove();
     public abstract void finishMove();
+
+
 }

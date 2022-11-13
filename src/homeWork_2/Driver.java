@@ -9,10 +9,39 @@ public  class Driver  <T extends Transport & Competing> {
 
     public Driver(String driversName, String driversLicense, int experience, T car) {
         this.driversName = driversName;
-        this.driversLicense = driversLicense;
+
         this.experience = experience;
         this.car = car;
+        setDriversLicense(driversLicense);
     }
+
+    public String getDriversName() {
+        return driversName;
+    }
+
+    public String getDriversLicense() {
+        return driversLicense;
+    }
+
+    public void setDriversLicense(String driversLicense) {
+        if (driversLicense==null) {
+            throw new IllegalArgumentException("Не указана категория прав");
+        }
+        this.driversLicense = driversLicense;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public T getCar() {
+        return car;
+    }
+
     public void startMove() {
         System.out.println(" I am starting move");
    }

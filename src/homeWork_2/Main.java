@@ -8,7 +8,6 @@ public class Main {
         Car kia = new Car("kia", "rio", 1.8, Car.bodyType.СЕДАН);
 
         Truck daff = new Truck("Daff", "550", 3.2, Truck.LoadCapacity.N1);
-
         Truck maz = new Truck("maz", "650", 2.9, Truck.LoadCapacity.N2);
         Truck dfm = new Truck("dongFeng", "Captain", 3.0, Truck.LoadCapacity.N3);
         Truck valday = new Truck("valday", "next", 2.6, Truck.LoadCapacity.N2);
@@ -17,6 +16,15 @@ public class Main {
         Bus folAz = new Bus("golAz", "5291", 3.8, Bus.Capacity.MEDIUM);
         Bus liAz = new Bus("liaz", "254", 3.3, Bus.Capacity.VERY_LARGE);
         Bus nefAz = new Bus("nefAz", "657", 4.5, Bus.Capacity.LARGE);
+
+        service(
+                lada, toyota, bmw, kia,
+                daff, dfm, maz, valday,
+                paz, folAz, nefAz, liAz
+        );
+
+
+
         System.out.println(lada.toString());
         System.out.println(toyota.toString());
         System.out.println(bmw.toString());
@@ -32,9 +40,12 @@ public class Main {
         System.out.println(liAz.toString());
         System.out.println(nefAz.toString());
 
+
+
         DriverD driverD = new DriverD("Иванов Иван Иванович", "D", 15, paz);
         DriverC driverC = new DriverC("Дмитриев Дмитрий Дмитриевич", "C", 20, daff);
         DriverB driverB = new DriverB("Петров Петр Петрович", "B", 10, bmw);
+
 
 
         System.out.println(driverD.toString() +" "+ paz.toString() );
@@ -54,4 +65,15 @@ public class Main {
 
 
     }
+
+    private static void service (Transport... transports) {
+        for (int i = 0; i < transports.length; i++) {
+            if (!transports[i].service()) {
+                throw new RuntimeException("Автомобиль " + transports[i].getBrand() + transports[i].getModel() + " не прошел диагностику");
+
+            }
+        }
+    }
+
+
 }
